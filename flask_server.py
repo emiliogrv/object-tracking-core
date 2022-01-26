@@ -1,5 +1,6 @@
 import os
 import threading
+from base64 import b64decode
 
 import firebase_admin
 import requests
@@ -25,7 +26,7 @@ if app_env and app_env != "local":
         "type": os.getenv("FIREBASE_TYPE"),
         "project_id": project_id,
         "private_key_id": os.getenv("FIREBASE_PRIVATE_KEY_ID"),
-        "private_key": os.getenv("FIREBASE_PRIVATE_KEY"),
+        "private_key": b64decode(os.getenv("FIREBASE_PRIVATE_KEY")),
         "client_email": os.getenv("FIREBASE_CLIENT_EMAIL"),
         "client_id": os.getenv("FIREBASE_CLIENT_ID"),
         "auth_uri": os.getenv("FIREBASE_AUTH_URI"),

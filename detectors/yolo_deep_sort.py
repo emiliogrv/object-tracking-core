@@ -201,7 +201,10 @@ class YOLODeepSort(object):
                 )
 
             output = output + ".mp4"
-            return WriteGear(output, logging=True, **output_params), output
+            return (
+                WriteGear(output, logging=self.options.get("DEBUG"), **output_params),
+                output,
+            )
 
         output = output + mime.replace("image/", ".")
 
@@ -241,7 +244,7 @@ class YOLODeepSort(object):
         stream: VideoGear,
         writer: any,
         frame: np.ndarray,
-        dimensions: tuple[int, int],
+        dimensions: tuple,
     ):
         if stream:
             self._process_source_video(stream, writer, frame, dimensions)
@@ -250,9 +253,7 @@ class YOLODeepSort(object):
 
         writer.close()
 
-    def _process_source_image(
-        self, writer, frame: np.ndarray, dimensions: tuple[int, int]
-    ):
+    def _process_source_image(self, writer, frame: np.ndarray, dimensions: tuple):
         if dimensions:
             frame = self._resize_frame(frame, dimensions)
 
@@ -267,7 +268,7 @@ class YOLODeepSort(object):
         stream: VideoGear,
         writer: any,
         frame: np.ndarray,
-        dimensions: tuple[int, int],
+        dimensions: tuple,
     ):
         skip = self.options.get("OUTPUT_VIDEO_MAX_SECONDS_LENGTH")
         skip_count = 0
@@ -306,9 +307,7 @@ class YOLODeepSort(object):
 
         stream.stop()
 
-    def _resize_frame(
-        self, frame: np.ndarray, dimensions: tuple[int, int]
-    ) -> np.ndarray:
+    def _resize_frame(self, frame: np.ndarray, dimensions: tuple) -> np.ndarray:
         return cv2.resize(
             frame,
             dimensions,
@@ -490,7 +489,6 @@ class YOLODeepSort(object):
         # https://www.videezy.com/industry/5955-traffic-square-barcelona-spain-stock-video
         # https://www.videezy.com/urban/4298-random-cars-driving-by-4k-stock-video
         # https://motchallenge.net/sequenceVideos/MOT16-13-raw.mp4
-        # https://s3-us-west-2.amazonaws.com/uw-s3-cdn/wp-content/uploads/sites/6/2017/11/04133712/waterfall-750x500.jpg
 
         setup, output = self._setup_detection(source, output_filename)
         self._process_source(*setup)

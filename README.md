@@ -1,10 +1,22 @@
-# Object Tracking
+# ❓ About this project
 
-Object detection using YOLOv4 and object tracking using DeepSort and TensorFlow.
+This project is made in order to learn and put into practice my knowledge of Python and some AI models implementation, it was born as a personal project after asking myself how many cars pass by my window every day.
 
-It'll work fine with images and videos files as well as videos streaming platforms like YouTube.
+I implemented Object detection using YOLOv4 and object tracking using DeepSort and TensorFlow.
 
-# Want to test in local?
+It'll work fine with images and videos files and URLs as well as videos streaming platforms like YouTube.
+
+https://user-images.githubusercontent.com/13983577/151461274-4e540ad6-cdc3-4078-b1b0-f966667ec3d8.mp4
+
+# 💡 Getting Started
+
+To see how this project works you have two options
+
+### 🟡 Option 1: Online
+
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/emiliogrv/object-tracking-core/blob/main/opencv_yolo_deep_sort.ipynb)
+
+### 🟠 Option 2: In local?
 
 1. Clone the repository.
 2. Download [YOLO weights](https://github.com/AlexeyAB/darknet/releases/download/darknet_yolo_v4_pre/yolov4-tiny.weights) into **weights** folder.
@@ -24,12 +36,17 @@ It'll work fine with images and videos files as well as videos streaming platfor
 
 NOTE: By default, this will run only with CPU support.
 
-# References
+# 🧰 References
 
 1. [DeepSort YOLOv4 based object tracking](https://github.com/MatPiech/DeepSORT-YOLOv4-TensorRT-OpenVINO)
 2. [yolov4-deepsort](https://github.com/theAIGuysCode/yolov4-deepsort)
 3. [YOLOv4-Tutorials](https://github.com/augmentedstartups/YOLOv4-Tutorials/blob/master/3.%20YOLOv4%20Video%20and%20Webcam/darknet_video_mod.py#L21)
 4. [Deep SORT](https://github.com/mk-michal/deep_sort)
+
+# ❗ Troubleshooting
+
+If you find any problem in my code or anything else, feel free to contact me, open an issue or do a pull request, that
+way I can keep learning, and I can improve the code so that way anyone else can learn from it in the best way.
 
 
 

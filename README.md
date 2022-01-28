@@ -6,7 +6,7 @@ I implemented Object detection using YOLOv4 and object tracking using DeepSort a
 
 It'll work fine with images and videos files and URLs as well as videos streaming platforms like YouTube.
 
-https://user-images.githubusercontent.com/13983577/151461274-4e540ad6-cdc3-4078-b1b0-f966667ec3d8.mp4
+https://user-images.githubusercontent.com/13983577/151476568-679e21ff-83c2-49f8-887d-fcb0a7cad97e.mp4
 
 # 💡 Getting Started
 
